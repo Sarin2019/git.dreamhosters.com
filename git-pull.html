@@ -1,0 +1,69 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<title>git pull</title>
+
+<body>
+<a href="git-toc.html">Table of Contents</a>
+<h1>Overview</h1>
+<p>The <code>git pull</code> command is a quick way to run <code>git fetch</code> followed by <code>git merge</code>.</p>
+
+<h1>Usage</h1>
+<p>You can pull in remote changes in two ways:</p>
+
+<div class="h2section">
+<h2>If the repository is on github.com</h2>
+
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git pull https://github.com/repositoryname.git</span></pre></div>
+
+<h2>If you've added a remote repository using <code>git remote</code></h2>
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git pull remotename branchname</span></pre></div>
+
+<p> For example:</p>
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git pull upstream master</span>
+<span class="cmdoutput">From https://github.com/upstreamrepository
+ * branch            master     -> FETCH_HEAD
+Processing '/etc/joe/editorrc'...Processing '/etc/joe/ftyperc'...done
+done
+
+File /home/mygituser/gitrepos/gittestrepo/.git/MERGE_MSG saved
+Merge made by the 'recursive' strategy.
+ upstreamfile3.txt | 0
+ upstreamfile4.txt | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 upstreamfile3.txt
+ create mode 100644 upstreamfile4.txt</span>
+</pre>
+</div>
+</div>
+
+<dl>
+<dd>
+<p><span class="note">This will open a commit message prompt. Enter a simple description of what you're committing. Then click <code>CTRL + K + X</code> to save and exit.</span></p>
+</dd>
+</dl>
+
+
+<h1>Errors</h1>
+<p>If your local repository has information that is not on the rmeote repository, you'll see a merge conflict. Take the following steps to resolve.</p>
+<ol>
+<li>Run <code>git status</code> to view which files have issues.</li>
+<li>Open each of those files in an editor.</li>
+<li>You'll see two versions of the section with an issue. Choose which version you want to keep. Delete the code from the other version including any formatting tags like ==== or >>> or <<<.</li>
+<li>Add your changes using <code>git add</code>.</li>
+<li>Commit your changes.</li>
+<li>Push changes to your origin master branch.</li>
+<li>Try running the <code>git pull</code> again and it should work.</li>
+</ol>
+
+</body>
+</html>

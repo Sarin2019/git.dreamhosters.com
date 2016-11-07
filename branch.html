@@ -1,0 +1,140 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<title>Creating a branch</title>
+
+<body>
+<a href="git-toc.html">Table of Contents</a>
+<h1>Overview</h1>
+<p>A branch is an alternate version of the main branch of a project (usually the master branch).</p>
+<p>When you create a branch, you create a copy of the master branch. You can then edit this as you like without affecting the master branch.</p>
+<p>This page explains how to create a branch and push it to a repository on github.com.</p>
+
+<h1>View all branches</h1>
+<p>You can view all branches in a repo by running the <code>git branch</code> command:</p>
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git branch</span>
+<span class="cmdoutput"><span class="green">* master</span></span>
+</pre>
+</div>
+<p>Since only the 'master' branch shows, this informs you that there are no other branches in this repository.</p>
+
+
+<h1>Create a branch</h1>
+<p>Run the following to create a branch. You can name it anything you like.</p>
+
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git branch testbranch</span>
+</pre>
+</div>
+
+<p>Run <code>git branch</code> to confirm it's been added.</p>
+
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git branch</span>
+<span class="cmdoutput"><span class="green">* master</span>
+  testbranch</span>
+</pre>
+</div>
+
+<p>You can see the 'master' branch is still selected. You must now switch to the new branch.</p>
+
+<h1>Switch to the new branch</h1>
+<p>Run the <code>git checkout branchname</code> command to switch to the new repo.</p>
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git checkout testbranch</span>
+</pre>
+</div>
+
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git checkout testbranch</span>
+<span class="cmdoutput">Switched to branch 'testbranch'</span>
+</pre>
+</div>
+
+<p>Then run <code>git branch</code> to confirm you're now on the new branch.</p>
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git branch</span>
+<span class="cmdoutput">  master
+<span class="green">* testbranch</span></span>
+</pre>
+</div>
+
+<h1>Push your branch to the remote repo on github.com</h1>
+<ol>
+<li>In your new branch, edit any files you wish to push to the remote repository.</li>
+<li>Add and commit the files with:
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git commit -am "message here"</span></pre></div></li>
+<li>View the files in your commit before pushing to confirm everything looks good. To do this run:
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git diff-tree --no-commit-id --name-only -r <span class="green">commitID#</span></span></pre></div></li>
+<li>Push to the remote repository with:
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git push -u origin <span class="green">branchname</span></span></pre></div>
+'origin' is where you want it to go. Run <code>git remote -v</code> to confirm where you're pushing to.</li>
+<li>Visit your forked repository at github.com.</li>
+<li>From the top left BRANCH dropdown, choose your new branch you just committed.</li>
+<li>Create a pull request from that branch. Below the BRANCH dropdown (which should have your new branch selected already), click the 'New Pull Request' button.</li>
+<li>The pull request now shows on the primary (master) repository.</li>
+</ol> 
+
+<h1>Make an addition to a pull request from a specific branch</h1>
+<p>The following shows how to update your local repository from a branch someone else pushed to the main remote repository.</p>
+<p>Once updated you can edit and push your changes back to the remote repository to show as an addition to the pull request.</p>
+
+<ol>
+<li>Run the following to update your local repo:
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git remote update && git checkout master && git pull --ff-only origin</span>
+</pre>
+</div>
+This syncs your local repo with the upstream repo. This includes pulling in the branch where the pull request is coming from.</li>
+<li>Checkout the branch:
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git checkout branchname</span>
+</pre>
+</div>
+You can find 'branchname' on the top right of the pull request in github.com.</li>
+<li>You should now see the changes in your local files since you're on this new branch.</li>
+<li>Edit any files you like.</li>
+<li>Commit the file:
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git commit -am "commit message"</span>
+</pre>
+</div>
+<li>Push your changes:
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git push</span>
+</pre>
+</div>
+<li>The changes should now show as an addition to the pull request.</li>
+<li>The admin of the github.com repo must now review the pull request and merge any changes.</li>
+</ol>
+
+
+
+
+
+<h1>See also</h1>
+<ul>
+<li>https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</li>
+</ul>
+</body>
+</html>

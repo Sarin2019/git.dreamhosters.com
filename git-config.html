@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<title>git config</title>
+
+<body>
+<a href="git-toc.html">Table of Contents</a>
+
+<h1>Use <code>git config</code> to configure the repository</h1>
+<p>The <code>git config</code> command lets you configure the repo. You can define your name, email, preferences and behavior with this command.</p>
+
+<h1>How to use git config</h1>
+<p>The following two commands create your username and email address to be used with Git. View the SSH article for details on how to log into your server:</p>
+<div class="preboxcontainer">
+<pre class="prebox"><span class="server">[server]$ </span><span class="command">git config --global user.name "John Doe"</span>
+<span class="server">[server]$ </span><span class="command">git config --global user.email johndoe@example.com</span>
+</pre>
+</div>
+<p>This creates a file named .gitconfig in your user's directory with the following content:</p>
+<div class="preboxcontainer">
+<pre class="prebox">[user]
+        name = John Doe
+        email = johndoe@example.com
+</pre>
+</div>
+<p>Then, check your settings that Git can find by running the following:</p>
+<div class="preboxcontainer">
+<pre class="prebox"><span class="server">[server]$ </span><span class="command">git config --list</span>
+<span class="cmdoutput">user.name=John Doe
+user.email=johndoe@example.com</span>
+</pre>
+</div>
+
+<h1>Differences in config files</h1>
+<p>The /.git/config file is for repository settings. This is in the repository folder.</p>
+<p>The ~/.gitconfig file is for user settings. This is in your shell user directory.</p>
+
+</body>
+</html>

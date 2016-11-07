@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<title>git commit</title>
+
+<body>
+<a href="git-toc.html">Table of Contents</a>
+
+<h1>The git commit command</h1>
+<p>The <code>git commit</code> command commits files in the staging area to the project history. Git will never change a commit under you specifically tell it to do so.</p>
+
+<h1>Running the command</h1>
+<p>Run the following command to commit your staged files while at the same time adding a small message.</p>
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git commit -am "message here"</span></pre></div>
+<p>The -a flag says to add all changes in the working directory. These changes only include modifications to tracked files.</p>
+<p>The -m flag is so you can add a message.</p>
+
+<h1>View files in the commit</h1>
+<p>To view what is currently in the commit, do the following:</p>
+<ol>
+<li>After you commit you'll see an ID#. For example:
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git commit -m "2nd upstream commit"</span>
+<span class="cmdoutput">[master 6c0ae3a] 2nd upstream commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 upstreamfile2.txt</span></pre></div></li>
+<li>Copy the ID#. In this example it is 6c0ae3a.</li>
+<li>Run the following command with that ID to view what is in the commit.
+
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git diff-tree --no-commit-id --name-only -r 6c0ae3a</span>
+<span class="cmdoutput">upstreamfile2.txt</span></pre></div></li>
+</ol>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+	
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+	
+<title>Clone a repository</title>
+	
+<body>
+<a href="git-toc.html">Table of Contents</a>
+		
+	
+<h1>Clone a repository from GitHub.com</h1>
+<p>This page details how to clone a repository from github.com.</p>
+<ol>
+	<li>Visit github.com and locate the repository you'd like to download.</li>
+	<li> On the repository page is a green button on the left titled 'Clone or download'. Click this.</li>
+	<li>After you click the button, a pop-out appears below it. Copy the URL presented.</li>
+	<li>On your local computer (Mac or Linux) open a terminal.</li>
+	<li>Clone the repository with the following command:
+		<div class="preboxcontainer">
+		<pre class="prebox"><span class="server">[local]$ </span><span class="command">git clone https://github.com/repository-name.git</span></pre></div>
+	</li>
+		<ul>
+			<li>This downloads a folder containing all files in the repository.</li>
+		</ul>
+</ol>
+
+
+<h1>Contents of the files that are downloaded</h1>
+<p>View the following page to view the contents of the .git/ directory and .gitattributes files:</p>
+<ul>
+<li><a href="git-folder.html">Contents of .git folder</a>
+</ul>
+
+<h1>What the <code>clone</code> command does</h1>
+<p>This command copies an existing repository to your local computer. The repo is fully functional so you can start working on it right away.</p>
+<p>It also comes with a link pointed back to the original repository. You can see this by running <code>git remote -v</code>.</p>
+</body>
+</html>

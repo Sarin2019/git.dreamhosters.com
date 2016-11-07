@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<title>git status</title>
+
+<body>
+<a href="git-toc.html">Table of Contents</a>
+<h1>Overview</h1>
+<p>The <code>git status</code> command gives you a quick status update of your repository.</p>
+
+<h1>Usage examples</h1>
+
+<div class="h2section">
+<h2>Before any changes</h2>
+<p>Run <code>git status</code> before any changes are made:</p>
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git status</span>
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean</span>
+</pre>
+</div>
+
+<h2>After editing files</h2>
+<p>Run <code>git status</code> after you've edited files.</p>
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git status</span>
+<span class="cmdoutput">On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	<span class="red">file5.txt</span>
+
+nothing added to commit but untracked files present (use "git add" to track)</span></pre></div>
+	
+<h2>After adding files to the staging area</h2>
+<p>Run <code>git status</code> after you've added files to the staging area using <code>git add</code>.</p>
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git status</span>
+<span class="cmdoutput">On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+    <span class="green">new file:   file5.txt</span></span>
+</pre>
+</div>
+
+<h2>After commiting files</h2>
+
+<p>Run <code>git status</code> after you've commited files using <code>git commit</code>.</p>
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git status</span>
+<span class="cmdoutput">On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean</span>
+</pre>
+</div>
+
+<h2>After pushing files</h2>
+<p>Run <code>git status</code> after you've pushed changes to github.com.</p>
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git status</span>
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean</span>
+</pre>
+</div>

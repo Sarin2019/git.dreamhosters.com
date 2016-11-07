@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<title>Create a new epository</title>
+
+<body>
+<a href="git-toc.html">Table of Contents</a>
+<h1>Overview</h1>
+<p>This page explains how to create a new repository locally. This repository will only be available on your local computer.</p>
+
+<h1>git init</h1>
+<p>The <code>git init</code> command create a new git repository. This is often the first command you'll run on a new project. Run the following to create a new repository:</p>
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git init</span></pre></div>
+
+<p>This creates a <a href="git-folder">/.git subdirectory</a> which contains metedata.</p>
+
+	<div class="h2section">
+	<h2>git init --bare</h2>
+	<p>If you're working with others on this project, it's best to create it as a bare repository using the following command:</p>
+	<div class="preboxcontainer"><pre class="prebox"><span class="server">[server]$ </span><span class="command">git init --bare</span></pre></div>
+	<p>For more information on why this is recommended, <a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init">view this tutorial.</a></p>
+	</div>
+
+
+
+</body>
+</html>

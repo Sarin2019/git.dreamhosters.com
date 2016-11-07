@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<title>git fetch</title>
+
+<body>
+<a href="git-toc.html">Table of Contents</a>
+<h1>The git fetch command</h1>
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git fetch upstream master</span>
+<span class="cmdoutput">remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/upstreamrepository
+ * branch            master     -> FETCH_HEAD
+   1aa3afb..e3cd350  master     -> upstream/master</span></pre></div>
+
+
+
+<p>The <code>git fetch</code> command says to go back to wherever you cloned from (or have otherwise set up as a place to fetch from) and find "new stuff someone else added or changed or removed".</p>
+<p>Those changes are copied into your history only. They are not applied to your local repository yet.</p>
+<p>Once you run <code>git fetch</code>, check your log history to view what exactly was 'fetched'.</p>
+
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git log --all</span>
+<span class="cmdoutput">commit e3cd350ba5c225bb63ed075ccd9de765bb8c8c3a
+Author: username <john.smtih@example.com>
+Date:   Mon Oct 10 18:42:48 2016 -0700
+
+    Create upstreamfile.txt</span></pre></div>
+
+<p>In this case, only a single file is new in the upstream repo.</p>
+<p>You now must <a href="git-merge.html">'merge'</a> these changes into your local repository.</p>
+
+
+<h1>See also</h1>
+<ul>
+<li><a href="https://git-scm.com/docs/git-fetch">git fetch documentation</a></li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<title>git add</title>
+
+<body>
+<a href="git-toc.html">Table of Contents</a>
+
+<h1>The git add command</h1>
+<p>The <code>git add</code> command adds changes in your working repository directory to the 'staging area'. It tell git what you want to include in updates during the next commit.</p>
+<p>However, this command does NOT record any changes. Only a <code>git commit</code> stores changed files.</p>
+
+<h1>How to use</h1> <p>Run the following in your working directory to add all files:</p>
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git add .</span></pre></div>
+<p>Run the <a class="external text" href="http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository" rel="nofollow">status command</a> to confirm which files are in the staging area:</p>
+<div class="preboxcontainer">
+<pre class="prebox"><span class="server">[server]$ </span><span class="command">git status</span>
+<span class="cmdoutput"># On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached &lt;file&gt;..." to unstage)
+#
+#       new file:   file1.txt
+#       new file:   file2.txt
+#       new file:   file3.txt
+#       new file:   subdirectory1/file4.txt
+#</span>
+</pre>
+</div>
+
+<p>Once the files are added, you can now <a href="git-commit.html>commit them.</a></p>
+</body>
+</html>

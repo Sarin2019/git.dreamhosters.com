@@ -1,0 +1,54 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<title>git remote</title>
+
+<body>
+<a href="git-toc.html">Table of Contents</a>
+<h1>Overview of the git remote command</h1>
+<p>The <code>git remote</code> command allows you to manage tracked repositories. For example, you can add an upstream repo to pull data from.</p>
+
+<h1>View tracked repos</h1>
+<p>Run <code>git remote -v</code> to view tracked repositories:
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git remote -v</span>
+<span class="cmdoutput">origin  https://github.com/gittestrepo.git (fetch)
+origin  https://github.com/gittestrepo.git (push)</span></pre></div>
+
+<p>The -v (verbose) flag displays all tracked repositories.</p>
+
+
+<h1>Add an upstream repo</h1>
+<p>You can also add an upstream repository to pull data from. First, find the URL of the repository on github.com or from the owner. Then runn the following to add it:</p>
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git remote add upstream https://github.com/upstreamrepository.git</span></pre></div>
+<p>If you run <code>git remote -v</code> now, you'll see the newly tracked repo:
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git remote -v</span>
+<span class="cmdoutput">origin  https://github.com/gittestrepo.git (fetch)
+origin  https://github.com/gittestrepo.git (push)
+upstream        https://github.com/upstreamrepository (fetch)
+upstream        https://github.com/upstreamrepository (push)
+</span></pre></div>
+<p>You can now run <code>git fetch upstream master</code> to update your remote repository from the upstream repository. 'master' must be the branch you wish to fetch. This is often master.</p>
+<p><span class="note">The word 'upstream' could be anything. This is just a common titled used.</span></p>
+
+<h1>Delete remote branch</h1>
+<p>To delete a branch run the following:</p>
+<div class="preboxcontainer">
+<pre class="prebox">
+<span class="server">[server]$ </span><span class="command">git remote rm upstream</span></pre></div>
+<p><span class="note">Make sure 'upstream' is whatever remote repo you wish to remove.</span></p>
+
+<h1>See also</h1>
+<ul>
+<li><a href="https://git-scm.com/docs/git-remote">git add documentaion</a></li>
+</ul>
+</body>
+</html>
